@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Awesome Books</title>
-  </head>
+</head>
 
-  <body>
-    <h1>Awsome books!</h1>
-    <section>
-      <div class="book">
-        <h3>Lorem Ipsuem</h3>
-        <p>Testeroo Testy</p>
-        <button type="submit">Remove</button>
-      </div>
-      <div class="book">
-        <h3>Second book</h3>
-        <p>Testeroo Testy</p>
-        <button type="submit">Remove</button>
-      </div>
+<body>
+    <section id="show-books">
+        <h1>Awsome books!</h1>
+        <div class="books">
+            <!-- <div class="book">
+                <h3>Lorem Ipsuem</h3>
+                <p>Testeroo Testy</p>
+                <button type="submit">Remove</button>
+            </div>
+            <div class="book">
+                <h3>Second book</h3>
+                <p>Testeroo Testy</p>
+                <button type="submit">Remove</button>
+            </div> -->
+        </div>
+
     </section>
     <section class="form">
-      <form action="">
-        <input type="text" placeholder="Title" required />
-        <input type="text" placeholder="Author" required />
-        <button type="submit">Add</button>
-      </form>
+        <form action="#" id="add-book">
+            <input type="text" placeholder="Title" id="title" required />
+            <input type="text" placeholder="Author" id="autor" required />
+            <button type="submit">Add</button>
+        </form>
     </section>
-  </body>
+</body>
+<script src="./index.js"></script>
+
 </html>
