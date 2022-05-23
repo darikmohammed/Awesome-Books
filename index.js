@@ -34,7 +34,21 @@ const showBooks = () => {
   }
 };
 
-const deleteCollection = (bookIndex) => {};
+const deleteCollection = (bookIndex) => {
+  if (bookIndex !== null) {
+    const books = getBooksList();
+
+    const bookRemoved = books.filter((item, key) => {
+      if (key !== bookIndex) {
+        return true;
+      }
+      return null;
+    });
+    setBooksList(bookRemoved);
+    showBooks();
+  }
+
+};
 
 const form = document.querySelector("#add-book");
 form.addEventListener("submit", (event) => {
