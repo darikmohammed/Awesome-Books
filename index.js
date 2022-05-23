@@ -1,13 +1,13 @@
 let booksList = [
-  { autor: "adfjlaf", title: "afdfaf" },
-  { autor: "adfjlaf", title: "other" },
+  { autor: 'adfjlaf', title: 'afdfaf' },
+  { autor: 'adfjlaf', title: 'other' },
 ];
 
 const setBooksList = (books) => {
-  localStorage.setItem("Books", JSON.stringify(books));
+  localStorage.setItem('Books', JSON.stringify(books));
 };
 const getBooksList = () => {
-  const books = JSON.parse(localStorage.getItem("Books"));
+  const books = JSON.parse(localStorage.getItem('Books'));
   if (books) {
     return books;
   }
@@ -22,8 +22,8 @@ const newCollection = (bookValues) => {
 
 const showBooks = () => {
   const books = getBooksList();
-  const htmlbooks = document.querySelector(".books");
-  htmlbooks.innerHTML = "";
+  const htmlbooks = document.querySelector('.books');
+  htmlbooks.innerHTML = '';
   for (let i = 0; i < books.length; i += 1) {
     htmlbooks.innerHTML += `
         <div class="book">
@@ -47,24 +47,23 @@ const deleteCollection = (bookIndex) => {
     setBooksList(bookRemoved);
     showBooks();
   }
-
 };
-
-const form = document.querySelector("#add-book");
-form.addEventListener("submit", (event) => {
+deleteCollection(-1);
+const form = document.querySelector('#add-book');
+form.addEventListener('submit', (event) => {
   event.preventDefault();
-  const bookTitle = document.querySelector("#title");
-  const bookAutor = document.querySelector("#autor");
+  const bookTitle = document.querySelector('#title');
+  const bookAutor = document.querySelector('#autor');
 
-  if (bookTitle.value.trim() !== "" && bookAutor.value.trim() !== "") {
+  if (bookTitle.value.trim() !== '' && bookAutor.value.trim() !== '') {
     const bookValues = {
       autor: bookAutor.value,
       title: bookTitle.value,
     };
     newCollection(bookValues);
     showBooks();
-    bookTitle.value = "";
-    bookAutor.value = "";
+    bookTitle.value = '';
+    bookAutor.value = '';
   }
 });
 
