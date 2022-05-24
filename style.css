@@ -1,8 +1,69 @@
-@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 * {
   margin: 0;
   padding: 0;
-  font-family: "Anton", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
+#show-books {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem;
+  gap: 1.5rem;
+}
 
+.books {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #646464;
+}
+
+.book {
+  display: flex;
+  padding: 1rem 2rem;
+  gap: 1rem;
+  align-items: center;
+}
+
+button.removebtn {
+  margin-left: auto;
+}
+
+button {
+  padding: 0.3rem 0.7rem;
+  border-radius: 5%;
+}
+
+.add-book {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  box-sizing: border-box;
+  margin-top: 2rem;
+}
+
+.book1 {
+  background-color: #a09c9c;
+}
+
+#add-book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  align-self: center;
+}
+
+form input {
+  border: 2px solid #000;
+  padding: 0.5rem;
+  width: 20rem;
+}
+
+form button {
+  align-self: flex-end;
+}

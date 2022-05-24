@@ -21,10 +21,10 @@ class AwsomeBooks {
     htmlbooks.innerHTML = '';
     for (let i = 0; i < books.length; i += 1) {
       htmlbooks.innerHTML += `
-          <div class="book">
-          <h3>${books[i].title}</h3>
-          <p>${books[i].autor}</p>
-          <button type="button" onClick= "remove(${i})">Remove</button>
+          <div class="book book${i%2}">
+          <h3>"${books[i].title}"</h3>
+          <p>by ${books[i].autor}</p>
+          <button type="button" onClick= "remove(${i})" class='removebtn'>Remove</button>
           `;
     }
   };
