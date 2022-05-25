@@ -21,9 +21,9 @@ class AwsomeBooks {
     htmlbooks.innerHTML = '';
     for (let i = 0; i < books.length; i += 1) {
       htmlbooks.innerHTML += `
-          <div class="book book${i % 2}">
+          <div class="book">
           <h3>"${books[i].title}"</h3>
-          <p>by ${books[i].autor}</p>
+          <p><span class="by-span"> By </span> ${books[i].autor}</p>
           <button type="button" onClick= "remove(${i})" class='removebtn'>Remove</button>
           `;
     }
@@ -52,8 +52,11 @@ class AwsomeBooks {
 }
 
 const awsomeBooks = new AwsomeBooks();
-
+const list = document.querySelector('#list');
+const add = document.querySelector('#add');
+const contact = document.querySelector('#contact');
 const form = document.querySelector('#add-book');
+
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   const bookTitle = document.querySelector('#title');
@@ -75,3 +78,29 @@ const remove = (index) => {
 };
 remove(-1);
 awsomeBooks.showBooks();
+
+// dynamic navigation
+list.addEventListener('click', () => {
+  list.classList.add('active');
+  add.classList.remove('active');
+  contact.classList.remove('active');
+  document.querySelector('#show-books').style.display = 'flex';
+  document.querySelector('#add-new-book').style.display = 'none';
+  document.querySelector('#contact-us').style.display = 'none';
+});
+add.addEventListener('click', () => {
+  list.classList.remove('active');
+  add.classList.add('active');
+  contact.classList.remove('active');
+  document.querySelector('#show-books').style.display = 'none';
+  document.querySelector('#add-new-book').style.display = 'flex';
+  document.querySelector('#contact-us').style.display = 'none';
+});
+contact.addEventListener('click', () => {
+  list.classList.remove('active');
+  add.classList.remove('active');
+  contact.classList.add('active');
+  document.querySelector('#show-books').style.display = 'none';
+  document.querySelector('#add-new-book').style.display = 'none';
+  document.querySelector('#contact-us').style.display = 'flex';
+});
