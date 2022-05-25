@@ -80,4 +80,27 @@ remove(-1);
 awsomeBooks.showBooks();
 
 //dynamic navigation
-
+list.addEventListener("click", () => {
+  list.classList.add("active");
+  add.classList.remove("active");
+  contact.classList.remove("active");
+  document.querySelector("#show-books").style.display = "flex";
+  document.querySelector("#add-new-book").style.display = "none";
+  document.querySelector("#contact-us").style.display = "none";
+});
+add.addEventListener("click", () => {
+  list.classList.remove("active");
+  add.classList.add("active");
+  contact.classList.remove("active");
+  document.querySelector("#show-books").style.display = "none";
+  document.querySelector("#add-new-book").style.display = "flex";
+  document.querySelector("#contact-us").style.display = "none";
+});
+contact.addEventListener("click", () => {
+  list.classList.remove("active");
+  add.classList.remove("active");
+  contact.classList.add("active");
+  document.querySelector("#show-books").style.display = "none";
+  document.querySelector("#add-new-book").style.display = "none";
+  document.querySelector("#contact-us").style.display = "flex";
+});
