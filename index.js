@@ -57,7 +57,6 @@ const add = document.querySelector("#add");
 const contact = document.querySelector("#contact");
 const form = document.querySelector("#add-book");
 
-
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const bookTitle = document.querySelector("#title");
@@ -80,5 +79,4 @@ const remove = (index) => {
 remove(-1);
 awsomeBooks.showBooks();
 
-
-
+//dynamic navigation
